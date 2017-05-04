@@ -5,6 +5,7 @@
 
 # Initialization with empty dictionary
 actors_dict = {}
+print(actors_dict)              # to show what an empty dictionary looks like when printed
 
 # Inserting into dictionary
 actors_dict['Johnny Depp'] = 'Kentucky'
@@ -37,7 +38,7 @@ if actor in actors_dict:
 print(actors_dict)
 
 # ... example when actor is not in the dictionary.
-actor = 'Marlon Brando'
+actor = 'Chris Hemsworth'
 if actor in actors_dict:
     del actors_dict[actor]
 print(actors_dict)
