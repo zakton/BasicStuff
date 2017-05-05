@@ -1,5 +1,5 @@
 # Python 3.6
-# A set contains values
+# A set contains unique values
 # Sets in this program contain names of actors
 
 # Initialization with an empty set
@@ -43,6 +43,19 @@ if actor in actors_set:
     actors_set.remove(actor)
 print(actors_set)
 
-# TODO Iteration and Search
+# Set iteration
+for actor in actors_set:
+    print(actor)
 
+# Searching an item in a set
+actor = 'Channing Tatum'                # example of search - when the searched item is not in the set
+if actor in actors_set:
+    print(actor,'is in the set')
+else:
+    print(actor,'is not in the set')
 
+actor = 'Chris Hemsworth'               # example of search - when the searched item is in the set
+if actor in actors_set:
+    print(actor,'is in the set')
+else:
+    print(actor,'is not in the set')
