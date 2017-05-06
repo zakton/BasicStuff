@@ -1,5 +1,5 @@
 # Python 3.6
-# A dictionary contains {key: value}
+# A dictionary contains {key: value}. Keys in a dictionary are unique.
 # Dictionaries in this program contain {actor_name: birth_place}
 # Dictionaries are mutable, i.e. it can be changed, after it is created.
 
@@ -55,3 +55,4 @@ for i in actors_dict:
     if actors_dict[i] == searched_birth_place:
         selected_actors[i] = searched_birth_place
 print(selected_actors)
+
