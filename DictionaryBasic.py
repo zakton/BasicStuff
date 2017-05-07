@@ -56,3 +56,11 @@ for i in actors_dict:
         selected_actors[i] = searched_birth_place
 print(selected_actors)
 
+# Alternatively, using key and value as for item; contain result in a set
+searched_birth_place = 'Kentucky'
+selected_actors = set()
+for a, bp in actors_dict.items():
+    if bp == searched_birth_place:
+        selected_actors.add(a)
+print(selected_actors)
+
