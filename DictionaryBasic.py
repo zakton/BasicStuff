@@ -44,9 +44,19 @@ if actor in actors_dict:
 print(actors_dict)
 
 # Dictionary Iteration
-for i in actors_dict:
-    print(i)                # reading the key
-    print(actors_dict[i])   # reading the value
+for k in actors_dict:
+    print(k)                # reading the key
+    print(actors_dict[k])   # reading the value
+
+# Dictionary Iteration - reading the values
+print("\nDictionary Iteration - reading the values")
+for v in actors_dict.values():
+    print(v)
+
+# Dictionary Iteration - reading both key and value pairs
+print("\nDictionary Iteration - reading both key and value pairs")
+for k, v in actors_dict.items():
+    print(k, 'was born in', v)
 
 # Dictionary Search for value
 searched_birth_place = 'Kentucky'
@@ -63,4 +73,27 @@ for a, bp in actors_dict.items():
     if bp == searched_birth_place:
         selected_actors.add(a)
 print(selected_actors)
+print()
+
+# defaultdict
+print("defaultdict demo")
+from collections import defaultdict
+actors_dict2 = defaultdict(lambda:'Unknown birth place')
+actors_dict2['Jimmy Stewart'] = 'USA'
+actors_dict2['Kenny Rogers'] = 'USA'
+print(actors_dict2['Kenneth Branagh'])              # Not sure what's the use of the defaultdict'. Can just use None for value.
+print(actors_dict2)
+
+# new pointer vs new instance; assigning vs copying
+print("\nNew pointer vs New Instance")
+dict_pointer = actors_dict                          # a new pointer is assigned to the same instance pointed by actors_dict
+dict_pointer['Kenneth Branagh'] = 'Northern Ireland'
+print(actors_dict)                                  # New actor added as a new actor added through dict_pointer
+print(dict_pointer)
+print()
+another_dict = actors_dict.copy()                   # a new instance is created, content of actor_dict is copied to it
+another_dict['Kevin Spacey'] = 'USA'
+print(actors_dict)                                  # Unchanged
+print(another_dict)                                 # New actor added
+
 
