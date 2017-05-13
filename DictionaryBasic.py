@@ -75,15 +75,6 @@ for a, bp in actors_dict.items():
 print(selected_actors)
 print()
 
-# defaultdict
-print("defaultdict demo")
-from collections import defaultdict
-actors_dict2 = defaultdict(lambda:'Unknown birth place')
-actors_dict2['Jimmy Stewart'] = 'USA'
-actors_dict2['Kenny Rogers'] = 'USA'
-print(actors_dict2['Kenneth Branagh'])              # Not sure what's the use of the defaultdict'. Can just use None for value.
-print(actors_dict2)
-
 # new pointer vs new instance; assigning vs copying
 print("\nNew pointer vs New Instance")
 dict_pointer = actors_dict                          # a new pointer is assigned to the same instance pointed by actors_dict
@@ -96,4 +87,12 @@ another_dict['Kevin Spacey'] = 'USA'
 print(actors_dict)                                  # Unchanged
 print(another_dict)                                 # New actor added
 
+# Create a dictionary of lists --> Place, who were born in Place
+from collections import defaultdict
 
+print('------ Example of defaultdict ------')
+print(actors_dict)
+actors_by_place = defaultdict(list)                 # this defines the value to be a list; try replacing default(list) with {}
+for actor, place in actors_dict.items():
+    actors_by_place[place].append(actor)            # on first call of a non-existing key, it will create a new key with an empty list
+print(actors_by_place)                              # Using assignment would have replaced the value, instead of appending to a list
